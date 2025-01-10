@@ -70,9 +70,6 @@ Model::Model( double t_length, unsigned t_discretization, std::array<double,2> t
         alphaNorthSouth = std::abs(m_wind[1]/t_max_wind) + 1;
         alphaSouthNorth = 1. - std::abs(m_wind[1]/t_max_wind);
     }
-    std::cout << "p1 : " << p1 << " et alpha = ["
-              << p1*alphaEastWest << ", " << p1*alphaWestEast << ", "
-              << p1*alphaNorthSouth << ", " << p1*alphaSouthNorth << "]" << std::endl;
 }
 // --------------------------------------------------------------------------------------------------------------------
 bool 
@@ -135,9 +132,9 @@ Model::update()
                 next_front[f.first - 1] = 255.;
             }
         }
-
+        // Si le feu est à son max,
         if (f.second == 255)
-        {
+        {   // On regarde si il commence à faiblir pour s'éteindre au bout d'un moment :
             double tirage = pseudo_random( f.first * 52513 + m_time_step, m_time_step);
             if (tirage < p2)
             {
@@ -147,6 +144,7 @@ Model::update()
         }
         else
         {
+            // Foyer en train de s'éteindre.
             m_fire_map[f.first] >>= 1;
             next_front[f.first] >>= 1;
             if (next_front[f.first] == 0)
@@ -156,6 +154,7 @@ Model::update()
         }
 
     }    
+    // A chaque itération, la végétation à l'endroit d'un foyer diminue
     m_fire_front = next_front;
     for (auto f : m_fire_front)
     {

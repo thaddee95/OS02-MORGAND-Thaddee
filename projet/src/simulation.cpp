@@ -22,7 +22,6 @@ struct ParamsType
 void analyze_arg( int nargs, char* args[], ParamsType& params )
 {
     if (nargs ==0) return;
-    std::cout << "args : " << args[0] << std::endl;
     std::string key(args[0]);
     if (key == "-l"s)
     {

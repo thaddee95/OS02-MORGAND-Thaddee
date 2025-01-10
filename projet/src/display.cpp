@@ -64,7 +64,7 @@ Displayer::update( std::vector<std::uint8_t> const & vegetation_global_map,
       for (int j =  0; j < w; ++j )
       {
         SDL_SetRenderDrawColor(m_pt_renderer, fire_global_map[j + w*i], vegetation_global_map[j + w*i], 0, 255);
-        SDL_RenderDrawPoint(m_pt_renderer, j, h-i);
+        SDL_RenderDrawPoint(m_pt_renderer, j, h-i-1); 
       }
     SDL_RenderPresent(m_pt_renderer);
 }
