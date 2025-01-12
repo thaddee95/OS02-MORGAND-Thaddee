@@ -14,6 +14,17 @@ Coller ici les infos *utiles* de lscpu.
 
 ## Produit matrice-matrice
 
+### Effet de la taille de la matrice
+
+  n            | MFlops
+---------------|--------
+1024 (origine) |
+               |
+               |
+               |
+               |
+
+*Expliquer les résultats.*
 
 
 ### Permutation des boucles
