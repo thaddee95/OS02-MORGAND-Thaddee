@@ -24,7 +24,7 @@ clean:
 	$(CXX) $(CXXFLAGS2) -c $^ -o $@	
 
 calcul_pi.exe: calcul_pi.cpp
-	$(CXX) $(CXXFLAGS) $^ -o $@
+	$(MPICXX) $(CXXFLAGS) $^ -o $@
 
 TestProductMatrix.exe : TestProductMatrix.o Matrix.hpp Matrix.o ProdMatMat.o
 	$(CXX) $(CXXFLAGS2) $^ -o $@ $(LIB)	
