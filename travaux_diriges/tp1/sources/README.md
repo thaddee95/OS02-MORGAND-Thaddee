@@ -20,7 +20,7 @@ Caches (sum of all):
 ```
 
 
-## Produit matrice-matrice
+## 1) Produit matrice-matrice
 
 ### Effet de la taille de la matrice
 
@@ -31,7 +31,7 @@ Caches (sum of all):
 1025           | 660.288 | 3.26188
 1026           | 873.928 | 2.4717
 
-*Expliquer les résultats.*
+1.1 *Expliquer les résultats.*
 
 On remarque que la performance du produit matrice-matrice diminue drastiquement pour n=1024. Cela est du à la manière dont on accède aux différents éléments de la matrice A.  
 Tous les coefficients de la matrice A vont être stockés dans la mémoire RAM. Nous pouvons voir dans le fichier Matrix.hpp comment ces coefficients sont stockés:  
@@ -64,7 +64,7 @@ j,k,i             | 0.533584 | 4024.15 | 4.25019     | 4042.15
 k,j,i             | 1.03374  | 2077.4  | 8.28672     | 2073.18
 
 
-*Discuter les résultats.*
+1.2 *Discuter les résultats.*
 
 Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. Dans cet ordre, les deux matrices A et B sont parcourues colonne par colonne. Or, commme nous l'avons vu, les coefficients des matrices sont stockés colonne par colonne. Ainsi, avec cet ordre nous pouvons éviter les problèmes rencontrés ci-dessus. Lors du remplissage des lignes de cache, l'opération modulo aboutira moins souvent à une adresse déjà utilisée que pour les autres ordres.  
 
