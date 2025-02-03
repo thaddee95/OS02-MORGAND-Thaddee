@@ -101,6 +101,11 @@ Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. 
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D1024.png)
 
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D2048.png)
+
+![Alt text]()
+
+![Alt text]()
 
 ### Produit par blocs
 
