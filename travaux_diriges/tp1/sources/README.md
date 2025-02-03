@@ -97,7 +97,7 @@ Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. 
 7                 | 0.225105 | 1.53326        | 0.0589865      | 12.5551
 8                 | 0.230827 | 4.34282        | 0.0586776      | 12.5384
 
-*Tracer les courbes de speedup (pour chaque valeur de n), discuter les résultats.*
+1.3 *Tracer les courbes de speedup (pour chaque valeur de n), discuter les résultats.*
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D1024.png)  
 
@@ -108,6 +108,8 @@ Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D4096.png)  
 
 Nous pouvons constater que globalement, utiliser plusieurs coeurs au lieu d'un seul permet d'améliorer la performance de notre produit matriciel. En effet, en utilisant plusieurs coeurs, nous pouvons parlléliser le programme en mémoire partagée, ce qui permet de faire plus de calculs en même temps. Cependant, au bout d'un certain nombre de coeurs, nous n'obtenons plus de gain significatif en continuant de rajouter des coeurs. Cela est peut-être du au fait que la gestion des threads prend trop de temps lorsqu'un nombre important de coeurs est utilisé.  
+
+1.4 Il est sûrement possible d'améliorer les résultats obtenus puisque jusqu'à maintenant, nous avons utiliser un algorithme assez naïf pour effectuer le produit matrice-matrice. D'autres algorithmes plus efficaces existent. Dans la suite du TP, nous allons utiliser le produit matriciel par blocs.  
 
 ### Produit par blocs
 
