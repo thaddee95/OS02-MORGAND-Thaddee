@@ -203,7 +203,25 @@ Nombre de coeurs | Valeur de pi approximée  | time
 8                | 3.35594                  | 12.809
 
 
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20pi%20OpenMP.png)  
 
+Comme vous pouvez le voir, la parallélisation n'a pas été efficace. Augmenter le nombre de coeurs n'a pas permi d'améliorer les performances, bien au contraire. Cela est assez surprenant, il se peut qu'il y ait une erreur dans mon code, à moins que la gestion des threads soit trop coûteuse.  
+
+J'ai également parallélisé le programme en mémoire distribuée à l'aide de MPI. On obtient les résultats suivants:
+
+Nombre de threads | Valeur de pi approximée  | time
+-----------------|--------------------------|---------
+1                | 3.14163                  | 8.52427
+2                | 3.14133                  | 4.8319
+3                | 3.14151                  | 3.40191
+4                | 3.14156                  | 5.53834
+5                | 3.14173                  | 2.28216
+6                | 3.14143                  | 2.00158
+7                | 3.14124                  | 1.81286
+8                | 3.14147                  | 1.44691
+
+
+![Alt text]()
 
 # Tips
 
