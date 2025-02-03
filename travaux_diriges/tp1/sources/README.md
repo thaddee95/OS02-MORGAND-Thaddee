@@ -179,6 +179,32 @@ Pour szBlock=1024, n=1024 et OMP_NUM=8 on avait obtenu MFlops=9566.07 et time=0.
 Dans les mêmes conditions mais en utilisant BLAS, on obtient MFlops=2611.38 et time=0.822357s.  
 Le rapport de temps est de 3.66322 en faveur de la version précédente. La version sans BLAS est plus de 3 fois plus rapide que la version utilisant BLAS. Ce rapport est assez surprenant, normalement la bibliothèque BLAS est censée optimiser le produit matrice-matrice. Peut-être que l'influence de la parallélisation est plus importante que celle de l'optimisation fournie par BLAS.  
 
+
+## 2) Parallélisation MPI
+
+### 2.1 Circulation d'un jeton dans un anneau
+
+Le code est contenu dans jeton.cpp.  
+
+### 2.2 Calcul très approché de pi
+
+J'ai utilisé 100000000 points pour chaque programme approximant pi.
+J'ai tout d'abord parallélisé le programme en mémoire partagée dans le fichier calcul_pi_openmp.cpp. Voici les résultats:  
+
+Nombre de coeurs | Valeur de pi approximée  | time
+-----------------|--------------------------|---------
+1                | 3.14163                  | 8.52427
+2                | 3.19595                  | 10.6799
+3                | 3.22487                  | 10.2832
+4                | 3.2817                   | 11.1445
+5                | 3.31585                  | 14.4748
+6                | 3.21528                  | 12.9168
+7                | 3.35955                  | 9.77158
+8                | 3.35594                  | 12.809
+
+
+
+
 # Tips
 
 ```
