@@ -36,10 +36,10 @@ Caches (sum of all):
 On remarque que la performance du produit matrice-matrice diminue drastiquement pour n=1024. Cela est du à la manière dont on accède aux différents éléments de la matrice A.  
 Tous les coefficients de la matrice A vont être stockés dans la mémoire RAM. Nous pouvons voir dans le fichier Matrix.hpp comment ces coefficients sont stockés:  
 
-  double operator() (int i, int j) const
-  {
-    return m_arr_coefs[i+j*nbRows];
-  }
+  double operator() (int i, int j) const  
+  {  
+    return m_arr_coefs[i+j*nbRows];  
+  }  
 
 Ainsi, on commence par parcourir la 1ère colonne de haut en bas puis on passe à la suivante. On itère pour chaque colonne.
 Cependant, dans l'implémentation de notre produit matrice-matrice, on parcourt la matrice A ligne par ligne et non colonne par colonne. Dès lors, un jump de 1024 cases est effectué pour accéder à l'élément suivant.  
