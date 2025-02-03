@@ -2,7 +2,7 @@ include Make_linux.inc
 #include Make_msys2.inc
 #include Make_osx.inc
 
-CXXFLAGS = -std=c++14
+CXXFLAGS = -std=c++14 -fopenmp
 ifdef DEBUG
 CXXFLAGS += -g -O0 -Wall -fbounds-check -pedantic -D_GLIBCXX_DEBUG
 CXXFLAGS2 = CXXFLAGS
@@ -11,7 +11,7 @@ CXXFLAGS2 = ${CXXFLAGS} -O2 -march=native -Wall
 CXXFLAGS += -O3 -march=native -Wall
 endif
 
-ALL= calcul_pi.exe TestProductMatrix.exe test_product_matrice_blas.exe 
+ALL= calcul_pi.exe TestProductMatrix.exe TestProductMatrixSubBlocks.exe test_product_matrice_blas.exe 
 
 default:	help
 
@@ -27,6 +27,9 @@ calcul_pi.exe: calcul_pi.cpp
 	$(MPICXX) $(CXXFLAGS) $^ -o $@
 
 TestProductMatrix.exe : TestProductMatrix.o Matrix.hpp Matrix.o ProdMatMat.o
+	$(CXX) $(CXXFLAGS2) $^ -o $@ $(LIB)
+
+TestProductMatrixSubBlocks.exe : TestProductMatrixSubBlocks.o Matrix.hpp Matrix.o ProdMatMatSubBlocks.o
 	$(CXX) $(CXXFLAGS2) $^ -o $@ $(LIB)	
 
 test_product_matrice_blas.exe : test_product_matrice_blas.o Matrix.hpp Matrix.o

@@ -10,9 +10,20 @@
 namespace {
 void prodSubBlocks(int iRowBlkA, int iColBlkB, int iColBlkA, int szBlock,
                    const Matrix& A, const Matrix& B, Matrix& C) {
+  /* ordre origine */
+
+  /*
   for (int i = iRowBlkA; i < std::min(A.nbRows, iRowBlkA + szBlock); ++i)
     for (int k = iColBlkA; k < std::min(A.nbCols, iColBlkA + szBlock); k++)
       for (int j = iColBlkB; j < std::min(B.nbCols, iColBlkB + szBlock); j++)
+        C(i, j) += A(i, k) * B(k, j);
+  */
+
+  int i,j,k;
+  #pragma omp parallel for private(j,k,i) // on protège les indices contre des accès simultanés
+  for (int j = iColBlkB; j < std::min(B.nbCols, iColBlkB + szBlock); j++)
+    for (int k = iColBlkA; k < std::min(A.nbCols, iColBlkA + szBlock); k++)
+      for (int i = iRowBlkA; i < std::min(A.nbRows, iRowBlkA + szBlock); ++i)
         C(i, j) += A(i, k) * B(k, j);
 }
 const int szBlock = 32;
