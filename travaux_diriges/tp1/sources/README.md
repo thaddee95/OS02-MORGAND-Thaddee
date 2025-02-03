@@ -169,10 +169,15 @@ Nous constatons que les résultats obtenus avec le produit matriciel par blocs s
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q7%20n%3D512%20et%20szBlock%3D512.png)  
 
+Ces résultats peuvent être expliqués avec les différents points que nous avons vus précédemment. Tout d'abord, utiliser plusieurs coeurs permet d'augmenter significativement les performances de notre produit matriciel. En effet, la parallélisation du calcul permet de gagner du temps de manière efficace. Quant à l'influence de la taille des blocs, nous avons vu plus haut que la taille 1024 donnaient des résultats légèrement meilleurs que pour la taille 512. Nous retrouvons à nouveau ce résultat avec la parallélisation en mémoire partagée.  
+
 ### Comparaison avec BLAS, Eigen et numpy
 
-*Comparer les performances avec un calcul similaire utilisant les bibliothèques d'algèbre linéaire BLAS, Eigen et/ou numpy.*
+1.8 *Comparer les performances avec un calcul similaire utilisant les bibliothèques d'algèbre linéaire BLAS, Eigen et/ou numpy.*
 
+Pour szBlock=1024, n=1024 et OMP_NUM=8 on avait obtenu MFlops=9566.07 et time=0.22449s,  
+Dans les mêmes conditions mais en utilisant BLAS, on obtient MFlops=2611.38 et time=0.822357s.  
+Le rapport de temps est de 3.66322 en faveur de la version précédente. La version sans BLAS est plus de 3 fois plus rapide que la version utilisant BLAS. Ce rapport est assez surprenant, normalement la bibliothèque BLAS est censée optimiser le produit matrice-matrice. Peut-être que l'influence de la parallélisation est plus importante que celle de l'optimisation fournie par BLAS.  
 
 # Tips
 
