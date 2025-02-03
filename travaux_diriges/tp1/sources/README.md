@@ -167,7 +167,7 @@ Nous constatons que les résultats obtenus avec le produit matriciel par blocs s
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q7%20n%3D1024%20et%20szBlock%3D512.png)  
 
-![Alt text]()  
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q7%20n%3D512%20et%20szBlock%3D512.png)  
 
 ### Comparaison avec BLAS, Eigen et numpy
 
