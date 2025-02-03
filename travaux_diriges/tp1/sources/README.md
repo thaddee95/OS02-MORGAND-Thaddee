@@ -33,6 +33,17 @@ Caches (sum of all):
 
 *Expliquer les résultats.*
 
+On remarque que la performance du produit matrice-matrice diminue drastiquement pour n=1024. Cela est du à la manière dont on accède aux différents éléments de la matrice A.  
+Tous les coefficients de la matrice A vont être stockés dans la mémoire RAM. Nous pouvons voir dans le fichier Matrix.hpp comment ces coefficients sont stockés:
+*  double operator() (int i, int j) const
+  {
+    return m_arr_coefs[i+j*nbRows];
+  }*
+Ainsi, on commence par parcourir la 1ère colonne de haut en bas puis on passe à la suivante. On itère pour chaque colonne.
+Cependant, dans l'implémentation de notre produit matrice-matrice, on parcourt la matrice A ligne par ligne et non colonne par colonne. Dès lors, un jump de 1024 cases est effectué pour accéder à l'élément suivant.
+De plus, lorsque la mémoire cache remplit une ligne de cache, elle accède à l'élément souhaité dans la mémoire RAM et effectue une opération modulo pour attribuer une adresse de cache à cet élément. Le problème est que du à ce modulo, la ligne de cache de l'élément 1024 a la même adresse que celle du 1er élément. La ligne de cache du 1er élément est donc supprimé. Ainsi, la même ligne de cache est à chaque fois remplie avec de nouvelles valeurs, ce qui fait qu'on ne garde pas beaucoup d'éléments dans la mémoire cache. Il y aura donc beaucoup d'accès aux éléments qui nécessiteront d'aller accéder à la mémoire RAM, or cet accès est moins rapide.
+
+Ce problème n'apparaît plus lorsque la dimension est différente de 1024. En effet, après l'opération de modulo, la ligne de cache de l'élément suivant obtient une nouvelle adresse. Dès lors, la mémoire cache peut stocker bien plus d'éléments. Les accès aux éléments seront donc plus rapide car beaucoup plus d'éléments seront gardés en mémoire cache.
 
 ### Permutation des boucles
 
