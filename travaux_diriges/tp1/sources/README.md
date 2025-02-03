@@ -99,13 +99,15 @@ Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. 
 
 *Tracer les courbes de speedup (pour chaque valeur de n), discuter les résultats.*
 
-![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D1024.png)
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D1024.png)  
 
-![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D2048.png)
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D2048.png)  
 
-![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D512.png)
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D512.png)  
 
-![Alt text]()
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D4096.png)  
+
+Nous pouvons constater que globalement, utiliser plusieurs coeurs au lieu d'un seul permet d'améliorer la performance de notre produit matriciel. En effet, en utilisant plusieurs coeurs, nous pouvons parlléliser le programme en mémoire partagée, ce qui permet de faire plus de calculs en même temps. Cependant, au bout d'un certain nombre de coeurs, nous n'obtenons plus de gain significatif en continuant de rajouter des coeurs. Cela est peut-être du au fait que la gestion des threads prend trop de temps lorsqu'un nombre important de coeurs est utilisé.  
 
 ### Produit par blocs
 
