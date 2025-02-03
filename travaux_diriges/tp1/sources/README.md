@@ -99,7 +99,7 @@ Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. 
 
 *Tracer les courbes de speedup (pour chaque valeur de n), discuter les résultats.*
 
-![Screenshot](Speedup Q3 n=1024.png)
+![Screenshot](Speedup\ Q3\ n\=1024.png)
 
 
 ### Produit par blocs
