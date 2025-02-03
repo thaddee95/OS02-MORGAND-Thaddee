@@ -8,7 +8,15 @@
 *lscpu donne des infos utiles sur le processeur : nb core, taille de cache :*
 
 ```
-Coller ici les infos *utiles* de lscpu.
+CPU(s):                   16
+    Thread(s) per core:   2
+    Core(s) per socket:   8
+    Socket(s):            1
+Caches (sum of all):      
+  L1d:                    256 KiB (8 instances)
+  L1i:                    256 KiB (8 instances)
+  L2:                     4 MiB (8 instances)
+  L3:                     4 MiB (1 instance)
 ```
 
 
