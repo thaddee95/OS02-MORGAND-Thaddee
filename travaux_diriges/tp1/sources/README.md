@@ -99,7 +99,7 @@ Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. 
 
 *Tracer les courbes de speedup (pour chaque valeur de n), discuter les résultats.*
 
-![Alt text]([Speedup\ Q3\ n\=1024.png])
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q3%20n%3D1024.png)
 
 
 ### Produit par blocs
