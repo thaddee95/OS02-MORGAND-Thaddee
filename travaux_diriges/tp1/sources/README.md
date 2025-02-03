@@ -136,8 +136,11 @@ origine (=max)    | 0.918759 | 6.82271        | 0.0781486      | 62.8097
 512               | 1.06896  | 12.2287        | 0.0875075      | 68.1478
 1024              | 0.848655 | 8.09118        | None           | 66.0974
 
-*Discuter les résultats.*
+1.5 Nous pouvons voir que pour toutes les dimensions testées, le meilleur résultat est obtenu pour une taille de bloc de 256.  
 
+1.6 *Discuter les résultats.*
+
+Nous constatons que les résultats obtenus avec le produit matriciel par blocs sont parfois mitigés. Selon la taille des blocs, les performances obtenues peuvent être meilleures ou moins bonnes que celles du produit matrice-matrice scalaire. Cela peut être expliqué par la taille de mon 1er cache. En effet, mon 1er cache est de taille 256 KiB, ce qui correspond à la taille de block optimale. Ainsi, nous pouvons garder les blocs dans la mémoire cache pour y accéder plus rapidement. Pour des blocs plus gros, la mémoire cache sera trop petite pour garder en mémoire tout un bloc.  
 
 
 ### Bloc + OMP
