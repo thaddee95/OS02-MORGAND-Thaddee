@@ -66,6 +66,8 @@ k,j,i             | 1.03374  | 2077.4  | 8.28672     | 2073.18
 
 *Discuter les résultats.*
 
+Nous pouvons constater que le meilleur résultat est obtenu pour l'ordre j,k,i. Dans cet ordre, les deux matrices A et B sont parcourues colonne par colonne. Or, commme nous l'avons vu, les coefficients des matrices sont stockés colonne par colonne. Ainsi, avec cet ordre nous pouvons éviter les problèmes rencontrés ci-dessus. Lors du remplissage des lignes de cache, l'opération modulo aboutira moins souvent à une adresse déjà utilisée que pour les autres ordres.  
+
 
 
 ### OMP sur la meilleure boucle
