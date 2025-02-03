@@ -161,8 +161,13 @@ Nous constatons que les résultats obtenus avec le produit matriciel par blocs s
 512            |  1      | 0.822254 | 8.35256        | 0.0884569      | 68.5173       |
 512            |  8      | 0.338124 | 2.23389        | 0.0441523      | 15.7165       |
 
-*Discuter les résultats.*
+1.7 *Discuter les résultats.*
 
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp1/sources/Speedup%20Q7%20n%3D1024%20et%20szBlock%3D1024.png)  
+
+![Alt text]()  
+
+![Alt text]()  
 
 ### Comparaison avec BLAS, Eigen et numpy
 
