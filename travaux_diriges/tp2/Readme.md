@@ -29,7 +29,16 @@ Pour l'affichage de cette suite, on calcule une image de $W\times H$ pixels tell
 
  nbThreads | temps calcul de l'ensemble | temps constitution de l'image
  ----------|----------------------------|------------------------------
-  1        | 4.243190288543701          | 0.060791969299316406
+  1        | 2.7888474464416504         | 0.04216599464416504
+  2        | 1.4285612106323242         | 0.048128366470336914
+  3        | 0.9951529502868652         | 0.049051761627197266
+  4        | 0.7784037590026855         | 0.05345034599304199
+  5        | 0.9519078731536865         | 0.05475974082946777
+  6        | 0.5735557079315186         | 0.06935572624206543
+  7        | 0.6897034645080566         | 0.05202174186706543
+  8        | 0.5875773429870605         | 0.05259251594543457  
+
+Nous pouvons remarquer que le temps de calcul de l'ensemble diminue quand on rajoute des threads. Par contre, celui pour la constitution de l'image augmente: en effet, plus on découpe l'image en un nombre important de paquets, plus la constitution prendra du temps. Il faudra rassembler plus de paquets. Cependant, l'augmentation du temps dû à cette constitution reste négligeable par rapport au temps nécessaire pour calculer l'ensemble.
 
 2. Réfléchissez à une meilleur répartition statique des lignes au vu de l'ensemble obtenu sur notre exemple et mettez la en œuvre. Calculer le temps d'exécution pour différents nombre de tâches et calculer le speedup et comparez avec l'ancienne répartition. Quel problème pourrait se poser avec une telle stratégie ?
 3. Mettre en œuvre une stratégie maître-esclave pour distribuer les différentes lignes de l'image à calculer. Calculer le speedup avec cette approche et comparez  avec les solutions différentes. Qu'en concluez-vous ?
