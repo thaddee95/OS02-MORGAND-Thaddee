@@ -16,5 +16,5 @@ nbThreads=[i+1 for i in range(8)]
 
 plt.plot(nbThreads,asymptote,color='red')
 plt.plot(nbThreads,speedup,color='green')
-plt.show()
 plt.savefig("images/Mandelbrot_Q1.png")
+plt.show()
