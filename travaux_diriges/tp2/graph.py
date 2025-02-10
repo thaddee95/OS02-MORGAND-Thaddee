@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 x=[0 for i in range(8)]
 x[0]=2.7888474464416504
@@ -11,10 +12,16 @@ x[6]=0.6897034645080566
 x[7]=0.5875773429870605
 
 speedup=[x[0]/x[i] for i in range(8)]
-asymptote=[x[0]*(i+1) for i in range(8)]
+asymptote=[i+1 for i in range(8)]
 nbThreads=[i+1 for i in range(8)]
 
 plt.plot(nbThreads,asymptote,color='red')
 plt.plot(nbThreads,speedup,color='green')
+plt.title("Speedup Mandelbrot Q1")
+plt.xlabel("Nombre de Threads")
+plt.ylabel("Speedup")
+plt.xticks(np.arange(1,9,1))
+plt.yticks(np.arange(0,asymptote[7],1))
+plt.grid()
 plt.savefig("images/Mandelbrot_Q1.png")
 plt.show()
