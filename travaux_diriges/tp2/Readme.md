@@ -98,6 +98,9 @@ Par soucis de simplification, on supposera $N$ divisible par le nombre de tâche
 Afin de paralléliser le produit matrice–vecteur, on décide dans un premier temps de partitionner la matrice par un découpage par bloc de colonnes. Chaque tâche contiendra $N_{\textrm{loc}}$ colonnes de la matrice. 
 
 - Calculer en fonction du nombre de tâches la valeur de Nloc
+
+Nloc=N/nbp
+  
 - Paralléliser le code séquentiel `matvec.py` en veillant à ce que chaque tâche n’assemble que la partie de la matrice utile à sa somme partielle du produit matrice-vecteur. On s’assurera que toutes les tâches à la fin du programme contiennent le vecteur résultat complet.
 - Calculer le speed-up obtenu avec une telle approche
 
@@ -106,6 +109,9 @@ Afin de paralléliser le produit matrice–vecteur, on décide dans un premier t
 Afin de paralléliser le produit matrice–vecteur, on décide dans un deuxième temps de partitionner la matrice par un découpage par bloc de lignes. Chaque tâche contiendra $N_{\textrm{loc}}$ lignes de la matrice.
 
 - Calculer en fonction du nombre de tâches la valeur de Nloc
+
+Nloc=N/nbp
+  
 - paralléliser le code séquentiel `matvec.py` en veillant à ce que chaque tâche n’assemble que la partie de la matrice utile à son produit matrice-vecteur partiel. On s’assurera que toutes les tâches à la fin du programme contiennent le vecteur résultat complet.
 - Calculer le speed-up obtenu avec une telle approche
 
