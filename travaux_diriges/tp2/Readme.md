@@ -67,7 +67,7 @@ Cela permet de s'assurer que les tâches exécutées par les threads sont de dur
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp2/images/Mandelbrot_Q2.png)  
 
-Visiblement, la nouvelle stratégie n'a pas été aussi efficace que ce que j'espérais. Nous avons une légère amélioration du speedup, cependant la différence est assez négligeable. 
+Visiblement, la nouvelle stratégie n'a pas été aussi efficace que ce que j'espérais. Nous avons une légère amélioration du speedup, cependant la différence est assez négligeable.  
 
 3. Mettre en œuvre une stratégie maître-esclave pour distribuer les différentes lignes de l'image à calculer. Calculer le speedup avec cette approche et comparez  avec les solutions différentes. Qu'en concluez-vous ?  
 
@@ -81,6 +81,9 @@ Visiblement, la nouvelle stratégie n'a pas été aussi efficace que ce que j'es
   6        | 0.7102105617523193         | 0.07566237449645996
   7        | 0.6286604404449463         | 0.07815980911254883
   8        | 0.5971922874450684         | 0.08520984649658203  
+
+En implémentant la stratégie maître-esclave, j'obtiens des résultats moins bons que pour les stratégies précédentes, même si cette parallélisation a comme même accéléré le temps de calcul de l'ensemble. Il se peut que mon implémentation ne soit pas suffisamment optimale: en effet, la tâche maître répartit des blocs de lignes aux autres threads. Cependant, selon la taille de bloc choisie et la taille de l'image voulue, il se peut qu'un bloc ne puisse pas être de la même taille que les autres (notamment si la taille de l'image n'est pas divisible par la taille de bloc). Pour pouvoir assigner un bloc de plus petite taille, j'effectue un test qui n'est peut-être pas nécessaire.
+Une autre explication possible réside dans la communication entre threads. En effet, cette stratégie nécessite de faire communiquer la tâche maître avec les autres tâches. Les résultats des threads sont récupérés au fur et à mesure par le thread maître. Ces différentes communications peuvent peut-être trop affecter les performances du programme.
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp2/images/Mandelbrot_Q3.png)
 
