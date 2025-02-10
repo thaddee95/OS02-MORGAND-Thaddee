@@ -69,7 +69,20 @@ Cela permet de s'assurer que les tâches exécutées par les threads sont de dur
 
 Visiblement, la nouvelle stratégie n'a pas été aussi efficace que ce que j'espérais. Nous avons une légère amélioration du speedup, cependant la différence est assez négligeable. 
 
-3. Mettre en œuvre une stratégie maître-esclave pour distribuer les différentes lignes de l'image à calculer. Calculer le speedup avec cette approche et comparez  avec les solutions différentes. Qu'en concluez-vous ?
+3. Mettre en œuvre une stratégie maître-esclave pour distribuer les différentes lignes de l'image à calculer. Calculer le speedup avec cette approche et comparez  avec les solutions différentes. Qu'en concluez-vous ?  
+
+ nbThreads | temps calcul de l'ensemble | temps constitution de l'image
+ ----------|----------------------------|------------------------------
+  1        | 2.7279422283172607         | 0.05819845199584961
+  2        | 2.6576433181762695         | 0.04564809799194336
+  3        | 1.4801344871520996         | 0.049326419830322266
+  4        | 0.967519998550415          | 0.053915977478027344
+  5        | 0.8838012218475342         | 0.06634783744812012
+  6        | 0.7102105617523193         | 0.07566237449645996
+  7        | 0.6286604404449463         | 0.07815980911254883
+  8        | 0.5971922874450684         | 0.08520984649658203  
+
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp2/images/Mandelbrot_Q3.png)
 
 ## 2. Produit matrice-vecteur
 
