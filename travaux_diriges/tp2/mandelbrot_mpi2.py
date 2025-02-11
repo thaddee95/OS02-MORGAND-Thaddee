@@ -93,4 +93,4 @@ if (rank==0):
     fin = time()
     print(f"Temps de constitution de l'image : {fin-deb}")
     image.show()
-    image.save("images/Mandel_MPI2.png")
+    image.save("images/Mandel_MPI.png")
