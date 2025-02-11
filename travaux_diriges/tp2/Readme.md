@@ -118,7 +118,7 @@ voir fichier matvec_par_col.py
   7        | 0.023441314697265625        
   8        | 0.020881175994873047        
 
-![Alt_text]()
+![Alt_text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp2/images/Produit%20par%20colonnes.png)
 
 ### b - Produit parallèle matrice-vecteur par ligne
 
@@ -145,7 +145,7 @@ voir fichier matvec_par_ligne.py
   7        | 0.019542694091796875        
   8        | 0.003913402557373047
 
-![Alt_text]()
+![Alt_text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp2/images/Produit%20par%20lignes.png)
 
 ## 3. Entraînement pour l'examen écrit
 
