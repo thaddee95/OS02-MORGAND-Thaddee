@@ -102,7 +102,23 @@ Afin de paralléliser le produit matrice–vecteur, on décide dans un premier t
 Nloc=N/nbp
   
 - Paralléliser le code séquentiel `matvec.py` en veillant à ce que chaque tâche n’assemble que la partie de la matrice utile à sa somme partielle du produit matrice-vecteur. On s’assurera que toutes les tâches à la fin du programme contiennent le vecteur résultat complet.
+
+voir fichier matvec_par_col.py
+  
 - Calculer le speed-up obtenu avec une telle approche
+
+ nbThreads | temps produit matriciel 
+ ----------|----------------------------
+  1        | 0.02459120750427246        
+  2        | 0.002222776412963867         
+  3        | 0.038811683654785156      
+  4        | 0.011368036270141602        
+  5        | 0.008697509765625        
+  6        | 0.012439489364624023        
+  7        | 0.023441314697265625        
+  8        | 0.020881175994873047        
+
+![Alt_text]()
 
 ### b - Produit parallèle matrice-vecteur par ligne
 
@@ -113,7 +129,23 @@ Afin de paralléliser le produit matrice–vecteur, on décide dans un deuxième
 Nloc=N/nbp
   
 - paralléliser le code séquentiel `matvec.py` en veillant à ce que chaque tâche n’assemble que la partie de la matrice utile à son produit matrice-vecteur partiel. On s’assurera que toutes les tâches à la fin du programme contiennent le vecteur résultat complet.
+
+voir fichier matvec_par_ligne.py
+
 - Calculer le speed-up obtenu avec une telle approche
+
+ nbThreads | temps produit matriciel 
+ ----------|----------------------------
+  1        | 0.02459120750427246        
+  2        | 0.020023822784423828         
+  3        | 0.018400192260742188     
+  4        | 0.012806892395019531       
+  5        | 0.0025763511657714844        
+  6        | 0.03521919250488281        
+  7        | 0.019542694091796875        
+  8        | 0.003913402557373047
+
+![Alt_text]()
 
 ## 3. Entraînement pour l'examen écrit
 
