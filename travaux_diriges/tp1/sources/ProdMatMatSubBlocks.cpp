@@ -20,8 +20,6 @@ void prodSubBlocks(int iRowBlkA, int iColBlkB, int iColBlkA, int szBlock,
         C(i, j) += A(i, k) * B(k, j);
   */
 
-  int i,j,k;
-  #pragma omp parallel for private(j,k,i) // on protège les indices contre des accès simultanés
   for (int j = iColBlkB; j < std::min(B.nbCols, iColBlkB + szBlock); j++)
     for (int k = iColBlkA; k < std::min(A.nbCols, iColBlkA + szBlock); k++)
       for (int i = iRowBlkA; i < std::min(A.nbRows, iRowBlkA + szBlock); ++i)
@@ -34,6 +32,7 @@ Matrix operator*(const Matrix& A, const Matrix& B) {
   Matrix C(A.nbRows, B.nbCols, 0.0);
 
   /* Produit matrice-matrice par blocs */
+  # pragma omp parallel for
   for (int J=0; J < B.nbCols/szBlock; J++){
     for (int K=0; K < A.nbCols/szBlock; K++){
       for (int I=0; I < A.nbRows/szBlock; I++){

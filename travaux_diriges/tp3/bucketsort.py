@@ -1,7 +1,6 @@
 import numpy as np
-import time
+from time import time
 from mpi4py import MPI
-from math import floor
 
 
 globCom = MPI.COMM_WORLD.Dup()
@@ -10,17 +9,20 @@ rank    = globCom.rank
 name    = MPI.Get_processor_name()
 
 # Bucket sort
-dim=100
+dim=1000
 local_size=dim//nbp
 local_values=np.random.rand(local_size)
+for i in range(local_size):
+    local_values[i]=local_values[i]**4
 print(f"Valeurs locales initiales pour le rang {rank}: {local_values}\n")
+deb=time()
 local_values.sort()
 
 min_global=globCom.allreduce(local_values[0],op=MPI.MIN)
 max_global=globCom.allreduce(local_values[-1],op=MPI.MAX)
 
 buckets = np.linspace( min_global, max_global, nbp+1)
-my_bucket = buckets[rank:rank+2]
+# my_bucket = buckets[rank:rank+2]
 
 dest=[0 for i in range(local_size)]
 local_source=np.zeros((nbp,nbp))
@@ -51,10 +53,13 @@ for current_source in range(nbp):
 local_values2.sort()
 local_values2=np.asarray(local_values2)
 loc_sizes = globCom.gather(len(local_values2), root=0)
+# print(f"Bucket de rang {rank}: {local_values2}\n")
 
 sorted_list=None
 if (rank==0):
     sorted_list=np.empty(local_size*nbp,dtype=np.float64)
 globCom.Gatherv(local_values2,[sorted_list,loc_sizes],root=0)
+fin=time()
 if (rank==0):
     print(f"Liste triée : {sorted_list}\n")
+    print(f"Temps de tri de la liste : {fin-deb}\n")

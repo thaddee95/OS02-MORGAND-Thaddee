@@ -46,7 +46,7 @@ comm.Gatherv(loc_array,   # source buffer
 zprint("The global gathered array (2):", glob_array)
 
 # Shuffled storage in destination:
-displacements = [0, 5, 8, 0]
+displacements = [0, 5, 8, 0, 13, 10, 25, 33]
 if rank == 0: glob_array *= 0
 comm.Gatherv(loc_array,   # source buffer
              [glob_array, loc_sizes, displacements, MPI.INT32_T], # dest buffer, local sizes, offsets (and type to avoid confusion)

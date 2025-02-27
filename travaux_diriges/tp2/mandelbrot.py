@@ -19,7 +19,7 @@ class MandelbrotSet:
         value = self.count_iterations(c, smooth)/self.max_iterations
         return max(0.0, min(value, 1.0)) if clamp else value
 
-    def count_iterations(self, c: complex,  smooth=False) -> int | float:
+    def count_iterations(self, c: complex,  smooth=False) -> int:
         z:    complex
         iter: int
 
@@ -69,3 +69,4 @@ image = Image.fromarray(np.uint8(matplotlib.cm.plasma(convergence.T)*255))
 fin = time()
 print(f"Temps de constitution de l'image : {fin-deb}")
 image.show()
+image.save("images/Mandel.png")
