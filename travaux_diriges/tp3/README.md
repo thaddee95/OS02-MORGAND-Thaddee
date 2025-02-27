@@ -28,7 +28,7 @@ J'ai tout d'abord implémenté le tri bucketsort avec des buckets réguliers. Vo
 
 Nous pouvons remarquer que le tri bucketsort est plus efficace que le tri par insertion. Le temps de calcul est divisé par plus de 10.  
 
-![Alt text]()
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp3/images/Buckets%20r%C3%A9guliers.png)
 
 Cependant, la courbe de speed-up n'est pas satisfaisante. Le temps effectué pour faire le tri augmente un peu lorsque nous augmentons le nombre de processus, alors que nous voudrions le voir diminuer. Cela est sûrement du aux nombreuses communications inter-processus que j'utilise dans mon code.  
 
