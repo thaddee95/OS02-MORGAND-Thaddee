@@ -47,6 +47,6 @@ J'ai ensuite implémenté le tri bucketsort avec des buckets calculés en foncti
 
 Pour un nombre important de processus, cette nouvelle version de bucketsort devient plus efficace. Lorsque nous affichons le contenu de chaque bucket, nous pouvons voir que les données sont mieux réparties entre les buckets pour le programme `bucketsort_quantile.py`, notamment lorsque nous concentrons les valeurs autour de 0.  
 
-![Alt text]()  
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/travaux_diriges/tp3/images/Buckets%20avec%20quantiles.png)  
 
 Malheureusement, la courbe de speed-up reste mauvaise, sûrement pour les mêmes raisons. Cependant, nous pouvons voir tout de même que le temps de calcul diminue en augmentant le nombre de processus, si nous excluons le cas avec un unique processus. Le tri `bucketsort_quantile.py` reste le plus efficace pour un grand nombre de processus, ce qui est satisfaisant.
