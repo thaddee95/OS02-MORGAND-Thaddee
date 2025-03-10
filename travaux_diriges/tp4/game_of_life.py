@@ -23,6 +23,7 @@ On itère ensuite pour étudier la façon dont évolue la population des cellule
 """
 import pygame  as pg
 import numpy   as np
+from mpi4py import MPI
 
 
 class Grille:
@@ -100,6 +101,11 @@ if __name__ == '__main__':
     import time
     import sys
 
+    globCom = MPI.COMM_WORLD.Dup()
+    nbp     = globCom.size
+    rank    = globCom.rank
+    name    = MPI.Get_processor_name()
+
     pg.init()
     dico_patterns = { # Dimension et pattern dans un tuple
         'blinker' : ((5,5),[(2,1),(2,2),(2,3)]),
@@ -133,19 +139,30 @@ if __name__ == '__main__':
         print("No such pattern. Available ones are:", dico_patterns.keys())
         exit(1)
     grid = Grille(*init_pattern)
-    appli = App((resx, resy), grid)
+    if(rank==0):
+        appli = App((resx, resy), grid)
 
     loop = True
     while loop:
-        #time.sleep(0.1) # A régler ou commenter pour vitesse maxi
-        t1 = time.time()
-        diff = grid.compute_next_iteration()
-        t2 = time.time()
-        appli.draw()
-        t3 = time.time()
-        for event in pg.event.get():
-            if event.type == pg.QUIT:
-                loop = False
-        print(f"Temps calcul prochaine generation : {t2-t1:2.2e} secondes, temps affichage : {t3-t2:2.2e} secondes\r", end='')
+        if(rank==1):
+            #time.sleep(0.1) # A régler ou commenter pour vitesse maxi
+            t1 = time.time()
+            diff = grid.compute_next_iteration()
+            t2 = time.time()
+            print(f"Temps calcul prochaine generation : {t2-t1:2.2e} secondes\r", end='')
+            globCom.send(grid,dest=0,tag=1)
+        if(rank==0):
+            grid = globCom.recv(source=1,tag=1)
+            appli.grid = grid
+            t4 = time.time()
+            appli.draw()
+            t3 = time.time()
+            print(f"Temps affichage : {t3-t4:2.2e} secondes\r", end='')
+            for event in pg.event.get():
+                if event.type == pg.QUIT:
+                    loop = False
+                    globCom.Abort()
+                    pg.quit()
+        #print(f"Temps calcul prochaine generation : {t2-t1:2.2e} secondes, temps affichage : {t3-t2:2.2e} secondes\r", end='')
 
-pg.quit()
+#pg.quit()
