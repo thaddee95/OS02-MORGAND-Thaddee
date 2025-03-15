@@ -44,7 +44,7 @@ Nombre de threads |Temps d'affichage moyen | Temps d'avancement en temps moyen |
 7                 | 0.0224599              | 0.987636                          | 32.8871
 8                 | 0.022299               | 0.975182                          | 32.4777  
 
-![Alt text]()
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q1_Avancement_en_temps.png)
 
 ![Alt text]()
 
