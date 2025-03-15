@@ -5,6 +5,7 @@
 
 Le nombre de coeurs physiques sur ma machine et la taille des différentes mémoires cache s'obtient avec la commande *lscpu* :  
 
+```
 CPU(s):                   16
     Thread(s) per core:   2
     Core(s) per socket:   8
@@ -14,6 +15,7 @@ Caches (sum of all):
   L1i:                    256 KiB (8 instances)
   L2:                     4 MiB (8 instances)
   L3:                     4 MiB (1 instance)
+```
 
   J'ai tout d'abord mesuré les temps moyens pris pour l'affichage, l'avancement en temps et le temps total du programme séquentiel :  
 
