@@ -45,9 +45,23 @@ Nombre de threads |Temps d'affichage | Temps d'avancement en temps | Temps total
 8                 | 0.022299         | 0.975182                    | 32.4777  
 
 Nous pouvons voir que cette parallélisation n'est pas très satisfaisante. De part le fait que la partie parallélisée est petite et que je dois créer un tableau contenant toutes les clés, la performance s'en retrouve dégradée.
-La parallélisation fait perdre en temps au lieu d'en gagner.
+La parallélisation fait perdre en temps au lieu d'en gagner. Le temps d'avancement en temps a légèrement augmenté. Le temps d'affichage est inchangé.  
 
 Pour chaque partie, afin de m'assurer que les simulations obtenues sont les mêmes, je calcule la somme des 5 1ères valeurs de végétation à chaque étape.
-La clé affichée est la somme totale de ces éléments à la fin de la modélisation. Cette méthode manque peut-être un peu de robustesse, mais je voulais un compromis pour ne pas perdre en temps de calcul.  
+La clé affichée est la somme totale de ces éléments à la fin de la modélisation. Cette méthode manque peut-être un peu de robustesse, mais je voulais un compromis pour ne pas perdre en temps de calcul. La clé que j'ai obtenue de cette manière est : 732360.  
+
 
 ## Deuxième étape
+
+Je suis reparti de la version originale du code et j'ai mis en place l'environnement MPI. J'ai séparé l'affichage, qui sera effectué par le processus 0, du calcul qui est ici effectué par le processus 1. Le processus 1 envoie au processus 0 les grilles de végétation et de feu après les avoir calculées. Voici le résultat que j'obtient :  
+
+Temps d'affichage | Temps d'avancement en temps | Temps total
+------------------|-----------------------------|------------
+0.0209088         | 0.653228                    | 22.3772  
+
+Cette parallélisation est bien plus satisfaisante. Nous pouvons voir que le temps total a diminué. En rendant possible la simultanéité de l'affichage et de l'avancement en temps, nous parvenons à gagner du temps. Le temps d'affichage, lui, n'est pas affecté. Ce qui est plus surprenant est que le temps d'avancement en temps a également diminué. Le temps d'avancement en temps ne devrait pas être affecté puisque cet avancement est calculé de la même manière, je trouve donc cette amélioration un peu surprenante.  
+
+## Troisième étape  
+
+
+
