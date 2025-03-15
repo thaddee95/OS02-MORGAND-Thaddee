@@ -1,0 +1,86 @@
+Base:
+ Global simulation time 30.448 Key 732360
+===============
+ Average step time 0.914479 Average display time 0.0218935
+
+ Etape 1:
+ 1
+ Global simulation time 32.0187 Key 732360
+===============
+ Average step time 0.961778 Average display time 0.0222011
+ 2
+ Global simulation time 32.3207 Key 732360
+===============
+ Average step time 0.970843 Average display time 0.0193775
+ 3
+ Global simulation time 29.2893 Key 732360
+===============
+ Average step time 0.876211 Average display time 0.0192415
+ 4
+ Global simulation time 32.0671 Key 732360
+===============
+ Average step time 0.962721 Average display time 0.0192656
+ 5
+ Global simulation time 32.037 Key 732360
+===============
+ Average step time 0.962152 Average display time 0.0219884
+ 6
+ Global simulation time 32.7392 Key 732360
+===============
+ Average step time 0.983458 Average display time 0.0222613
+ 7
+ Global simulation time 32.8871 Key 732360
+===============
+ Average step time 0.987636 Average display time 0.0224599
+ 8
+ Global simulation time 32.4777 Key 732360
+===============
+ Average step time 0.975182 Average display time 0.022299
+
+ Etape 2:
+  Average step time 0.653228
+ Global simulation time 22.3772 Key 732360
+===============
+ Average display time 0.0209088
+
+ Etape 3:
+ 1
+  Average step time 0.767318
+ Global simulation time 26.0465 Key 732360
+===============
+ Average display time 0.0239895
+ 2
+  Average step time 0.679766
+ Global simulation time 23.2708 Key 732360
+===============
+ Average display time 0.0213066
+ 3
+  Average step time 0.810582
+ Global simulation time 27.4318 Key 732360
+===============
+ Average display time 0.02531
+ 4
+  Average step time 0.680043
+ Global simulation time 23.2564 Key 732360
+===============
+ Average display time 0.0213307
+ 5
+  Average step time 0.767781
+ Global simulation time 26.061 Key 732360
+===============
+ Average display time 0.023966
+ 6
+  Average step time 0.779905
+ Global simulation time 26.4797 Key 732360
+===============
+ Average display time 0.0243406
+ 7
+  Average step time 0.769648
+ Global simulation time 26.1329 Key 732360
+===============
+ Average display time 0.0241371
+ 8
+  Average step time 0.819275
+ Global simulation time 27.8038 Key 732360
+===============
+ Average display time 0.0256032
