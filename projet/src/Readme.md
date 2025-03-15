@@ -44,8 +44,13 @@ Nombre de threads |Temps d'affichage moyen | Temps d'avancement en temps moyen |
 7                 | 0.0224599              | 0.987636                          | 32.8871
 8                 | 0.022299               | 0.975182                          | 32.4777  
 
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q1_Avancement_en_temps.png)
+
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q1_Temps_total.png)
+
 Nous pouvons voir que cette parallélisation n'est pas très satisfaisante. De part le fait que la partie parallélisée est petite et que je dois créer un tableau contenant toutes les clés, la performance s'en retrouve dégradée.
-La parallélisation fait perdre en temps au lieu d'en gagner. Le temps d'avancement en temps a légèrement augmenté. Le temps d'affichage est inchangé.  
+La parallélisation fait perdre en temps au lieu d'en gagner. Le temps d'avancement en temps a légèrement augmenté. Le temps d'affichage est inchangé.
+Nous n'avons aucune accélération significative, la parallélisation n'a pas été efficace.  
 
 Pour chaque partie, afin de m'assurer que les simulations obtenues sont les mêmes, je calcule la somme des 5 1ères valeurs de végétation à chaque étape.
 La clé affichée est la somme totale de ces éléments à la fin de la modélisation. Cette méthode manque peut-être un peu de robustesse, mais je voulais un compromis pour ne pas perdre en temps de calcul. La clé que j'ai obtenue de cette manière est : 732360.  
@@ -76,7 +81,12 @@ Nombre de threads |Temps d'affichage moyen | Temps d'avancement en temps moyen |
 7                 | 0.0241371              | 0.769648                          | 26.1329
 8                 | 0.0256032              | 0.819275                          | 27.8038  
 
-Ces résultats peuvent être expliqués avec les parties précédentes. Nous pouvons voir en effet que la parallélisation MPI permet encore de gagner en temps, mais comparé à la 2ème étape, les résultats sont moins bons, et ce à cause de la parallélisation avec OpenMP qui n'est pas efficace.  
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q3_Avancement_en_temps.png)
+
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q3_Temps_total.png)
+
+Ces résultats peuvent être expliqués avec les parties précédentes. Nous pouvons voir en effet que la parallélisation MPI permet encore de gagner en temps, mais comparé à la 2ème étape, les résultats sont moins bons, et ce à cause de la parallélisation avec OpenMP qui n'est pas efficace.
+Cependant, nous pouvons remarquer que les gains apportés par la parallélisation MPI restent très limités. Cela est sûrement du au temps nécessaire aux processus pour pouvoir communiquer entre eux.  
 
 ## Quatrième étape
 
