@@ -44,6 +44,10 @@ Nombre de threads |Temps d'affichage moyen | Temps d'avancement en temps moyen |
 7                 | 0.0224599              | 0.987636                          | 32.8871
 8                 | 0.022299               | 0.975182                          | 32.4777  
 
+![Alt text]()
+
+![Alt text]()
+
 Nous pouvons voir que cette parallélisation n'est pas très satisfaisante. De part le fait que la partie parallélisée est petite et que je dois créer un tableau contenant toutes les clés, la performance s'en retrouve dégradée.
 La parallélisation fait perdre en temps au lieu d'en gagner. Le temps d'avancement en temps a légèrement augmenté. Le temps d'affichage est inchangé.  
 
@@ -75,6 +79,10 @@ Nombre de threads |Temps d'affichage moyen | Temps d'avancement en temps moyen |
 6                 | 0.0243406              | 0.779905                          | 26.4797
 7                 | 0.0241371              | 0.769648                          | 26.1329
 8                 | 0.0256032              | 0.819275                          | 27.8038  
+
+![Alt text]()
+
+![Alt text]()
 
 Ces résultats peuvent être expliqués avec les parties précédentes. Nous pouvons voir en effet que la parallélisation MPI permet encore de gagner en temps, mais comparé à la 2ème étape, les résultats sont moins bons, et ce à cause de la parallélisation avec OpenMP qui n'est pas efficace.  
 
