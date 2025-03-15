@@ -46,7 +46,7 @@ Nombre de threads |Temps d'affichage moyen | Temps d'avancement en temps moyen |
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q1_Avancement_en_temps.png)
 
-![Alt text]()
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q1_Temps_total.png)
 
 Nous pouvons voir que cette parallélisation n'est pas très satisfaisante. De part le fait que la partie parallélisée est petite et que je dois créer un tableau contenant toutes les clés, la performance s'en retrouve dégradée.
 La parallélisation fait perdre en temps au lieu d'en gagner. Le temps d'avancement en temps a légèrement augmenté. Le temps d'affichage est inchangé.  
