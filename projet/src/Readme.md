@@ -82,7 +82,7 @@ Nombre de threads |Temps d'affichage moyen | Temps d'avancement en temps moyen |
 
 ![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q3_Avancement_en_temps.png)
 
-![Alt text]()
+![Alt text](https://github.com/thaddee95/OS02-MORGAND-Thaddee/blob/main/projet/src/images/Q3_Temps_total.png)
 
 Ces résultats peuvent être expliqués avec les parties précédentes. Nous pouvons voir en effet que la parallélisation MPI permet encore de gagner en temps, mais comparé à la 2ème étape, les résultats sont moins bons, et ce à cause de la parallélisation avec OpenMP qui n'est pas efficace.  
 
